@@ -14,6 +14,7 @@ function nextSlide(){
         valueOfPosition -= imageBundleWidth;
         imageUl.style.transform = `translateX(${valueOfPosition}px)`;
         pages += 1;
+        imageUl.style.transition = "transform 0.3s ease-in-out";
     }
     if (pages === 2){
         nextBtn.setAttribute("disabled", "true")
@@ -26,12 +27,14 @@ function prevSlide(){
         valueOfPosition += imageBundleWidth;
         imageUl.style.transform = `translateX(${valueOfPosition}px)`;
         pages -= 1;
+        imageUl.style.transition = "transform 0.3s ease-in-out";
     }
     if (pages === 0){
         prevBtn.setAttribute("disabled", "true")
     }
 }
 
+// 초기값
 function init(){
     prevBtn.setAttribute("disabled", "true");
     prevBtn.addEventListener("click", prevSlide);
